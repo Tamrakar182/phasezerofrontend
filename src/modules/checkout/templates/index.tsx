@@ -10,6 +10,8 @@ import Payment from "@modules/checkout/components/payment"
 import ShippingAddress from "../components/shipping-address"
 import { useForm, FormProvider } from "react-hook-form"
 import { PaymentProvider } from "@lib/context/payment-context"
+// modify payment functions here
+import { handleCODPayment, handleEsewaPayment } from "@lib/data"
 
 const CheckoutTemplate = () => {
   const router = useRouter()
@@ -33,6 +35,7 @@ const CheckoutTemplate = () => {
     },
   });
 
+  // modify here
   const handlePayment = (data: PZGuestCheckoutI) => {
     if (cartState) {
       console.log({

@@ -1,8 +1,13 @@
 import Link from "next/link"
 import { ProductPreviewType } from "types/global"
 import Thumbnail from "../thumbnail"
+import { PZProductWithoutStockI } from "../../../../../data"
 
-const ProductPreview = ({ product }: ProductPreviewType) => {
+interface Prop {
+  product: PZProductWithoutStockI
+}
+
+const ProductPreview = ({ product }: Prop) => {
   return (
     <Link href={`/products/${product.slug}`}>
       <div>

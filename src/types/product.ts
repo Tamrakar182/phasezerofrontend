@@ -66,6 +66,10 @@ export interface PZAddressResponseI {
   postal_code: string
 }
 
+export interface PZStockResponseI {
+  stock: PZProuctStockI[]
+}
+
 export interface PZOrderItemI {
   id: string
   orderId: string

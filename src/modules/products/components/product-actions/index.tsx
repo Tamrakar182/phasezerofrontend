@@ -71,7 +71,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
         </div>
       )}
 
-      <img src={product.size_chart} alt="size chart" className="w-full" />
+      {/* <img src={product.size_chart} alt="size chart" className="w-full" /> */}
 
       {colors.length > 1 && (
         <div className="my-8 flex flex-col gap-y-6">

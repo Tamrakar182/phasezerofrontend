@@ -1,10 +1,10 @@
 "use client"
 import ProductPreview from "@modules/products/components/product-preview"
 import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
-import { PZProductI } from "@/types/product"
+import { PZProductWithoutStockI } from "../../../../../data"
 
 type Props = {
-  products: PZProductI[]
+  products: PZProductWithoutStockI[]
 }
 
 const FeaturedProducts = ({ products }: Props) => {

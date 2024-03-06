@@ -4,6 +4,7 @@ import {
   PZCollectionsResponseI,
   PZOrderResponseI,
   PZAddressResponseI,
+  PZStockResponseI,
 } from "@/types/product"
 import axios from "@/lib/util/axios"
 // import { auth } from "@lib/util/authUtil"
@@ -128,3 +129,50 @@ export async function getProductsByCollection(
 //     throw err
 //   }
 // }
+
+export async function getStock(slug: string): Promise<PZStockResponseI> {
+  try {
+    const res = await axios.get(`/products/${slug}`)
+    return res.data
+  } catch (err) {
+    throw err
+  }
+}
+
+export const handleCODPayment = async (data: any) => {
+  try {
+    const reponse = await axios.post("/create/order")
+
+  } catch (error) {
+    throw error
+  }
+}
+
+export const handleEsewaPayment = async (data: any) => {
+  try {
+    const response = await axios.post("/create/order", data);
+    if (response?.status === 200) {
+        esewaCall(response?.data?.payload?.data.formData);
+    }
+  } catch (error) {
+    throw error
+  }
+};
+
+export const esewaCall = (formData: any) => {
+  const path = process.env.ESEWA_URL as string;
+  var form = document.createElement("form");
+  form.setAttribute("method", "POST");
+  form.setAttribute("action", path);
+
+  for (const key in formData) {
+      var hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", key);
+      hiddenField.setAttribute("value", formData[key]);
+      form.appendChild(hiddenField);
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+};

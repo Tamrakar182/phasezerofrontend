@@ -1,6 +1,7 @@
 import { PZProductI } from "@/types/product"
+export type PZProductWithoutStockI = Omit<PZProductI, 'stock'>;
 
-export const data: PZProductI[] = [
+export const data: PZProductWithoutStockI[] = [
   {
     id: 100,
     slug: "61c82d33-9ce0-495b-8a18-c4ce5d340272",
@@ -31,43 +32,6 @@ export const data: PZProductI[] = [
         name: "Retro_Collection",
       },
     ],
-    stock: [
-      {
-        color: "Eeerie black",
-        size: "M",
-        stockQuantity: 8,
-      },
-      {
-        color: "Santorini blue",
-        size: "L",
-        stockQuantity: 15,
-      },
-      {
-        color: "Reseda Green",
-        size: "XL",
-        stockQuantity: 27,
-      },
-      {
-        color: "Eerie black",
-        size: "M",
-        stockQuantity: 27,
-      },
-      {
-        color: "santorini blue",
-        size: "L",
-        stockQuantity: 6,
-      },
-      {
-        color: "Reseda Green",
-        size: "XL",
-        stockQuantity: 25,
-      },
-      {
-        color: "Eerie black",
-        size: "M",
-        stockQuantity: 28,
-      },
-    ],
   },
   {
     id: 98,
@@ -96,43 +60,6 @@ export const data: PZProductI[] = [
       {
         id: 1,
         name: "Retro_Collection",
-      },
-    ],
-    stock: [
-      {
-        color: "Pure white",
-        size: "M",
-        stockQuantity: 0,
-      },
-      {
-        color: "Pure black",
-        size: "L",
-        stockQuantity: 7,
-      },
-      {
-        color: "Pure white",
-        size: "XL",
-        stockQuantity: 8,
-      },
-      {
-        color: "Pure black",
-        size: "M",
-        stockQuantity: 1,
-      },
-      {
-        color: "Pure white",
-        size: "L",
-        stockQuantity: 23,
-      },
-      {
-        color: "Pure black",
-        size: "XL",
-        stockQuantity: 20,
-      },
-      {
-        color: "Pure white",
-        size: "M",
-        stockQuantity: 26,
       },
     ],
   },
@@ -167,42 +94,5 @@ export const data: PZProductI[] = [
     price: 2250,
     available_stock: 82,
     collectionId: 5,
-    stock: [
-      {
-        color: "Yale blue",
-        size: "M",
-        stockQuantity: 6,
-      },
-      {
-        color: "Pine green",
-        size: "L",
-        stockQuantity: 0,
-      },
-      {
-        color: "Yale blue",
-        size: "XL",
-        stockQuantity: 1,
-      },
-      {
-        color: "Pine green",
-        size: "M",
-        stockQuantity: 30,
-      },
-      {
-        color: "Yale blue",
-        size: "L",
-        stockQuantity: 27,
-      },
-      {
-        color: "Pine green",
-        size: "XL",
-        stockQuantity: 3,
-      },
-      {
-        color: "Yale blue",
-        size: "M",
-        stockQuantity: 15,
-      },
-    ],
   },
 ]
