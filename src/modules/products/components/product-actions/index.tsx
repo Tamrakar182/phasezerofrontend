@@ -54,7 +54,11 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   return (
     <div className="flex flex-col gap-y-2">
       <h3 className="text-xl-regular">{product.name}</h3>
-      <p className="text-base-regular">{product.description}</p>
+      <p className="text-base-regular">
+        {product.description}<br />
+        <span className="font-semibold">Male Model Size: </span>{product.modelSize[0]}<br />
+        <span className="font-semibold">Female Model Size: </span>{product.modelSize[1]}
+      </p>
 
 
       {sizes.length > 1 && (
@@ -72,7 +76,6 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
         </div>
       )}
 
-      {/* <img src={product.size_chart} alt="size chart" className="w-full" /> */}
       <SizeChart data={product.size_chart} />
 
       {colors.length > 1 && (

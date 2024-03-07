@@ -3,6 +3,7 @@ export interface PZProductI {
   slug: string
   name: string
   description: string
+  modelSize: string[]
   size_chart: SizeData[]
   info: string[]
   image: string[]

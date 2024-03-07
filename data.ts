@@ -8,6 +8,10 @@ export const data: PZProductWithoutStockI[] = [
     name: "Everday Hoodie",
     description:
       "A must-have addition to your Spring/Summer wardrobe. Crafted from soft, lightweight fabric, this hoodie is perfect for those cool mornings and breezy evenings. With a classic design and versatile style, it pairs effortlessly with jeans, shorts, or joggers for a laid-back yet stylish look.",
+    modelSize: [
+      "The model is 5’11”ft 74kgs and wears size L",
+      "The model is 5’6”ft 54kgs and wears size M"
+    ],
     info: [
       "Lycra fabric",
       "Relaxed fit",
@@ -44,10 +48,14 @@ export const data: PZProductWithoutStockI[] = [
     description:
       "A versatile essential for your Spring/Summer wardrobe. Crafted from lightweight, breathable fabric, this classic piece offers both style and comfort. With its timeless design and long sleeves for added sun protection, it's perfect for transitioning between seasons and staying cool on warmer days. Elevate your casual look effortlessly with this must-have staple.",
     info: [
-        "Light ,warm and comfortable Polyester cotton fabric",
+        "Light, warm and comfortable Polyester cotton fabric",
         "Logo embroidered on chest",
         "Half Botton for easy temperature regulation",
         "Suitable for sports or everyday wear", 
+    ],
+    modelSize: [
+      "The model is 5’11”ft 74kgs and wears size L",
+      "The model is 5’6”ft 54kgs and wears size M",
     ],
     size_chart: [
       { id: 1, size: 'M', chest: '42 inch', length: '25 inch', sleeves: '22 inch' },
@@ -84,6 +92,10 @@ export const data: PZProductWithoutStockI[] = [
       "Adjustable Drawstrings",
       "Half zip chain for easy temperature regulation",
       "Perfect for Indoor/Outdoor",
+    ],
+    modelSize: [
+      "The model is 5’11”ft 74kgs and wears size L",
+      "The model is 5’2”ft 50kgs and wears size M",
     ],
     size_chart: [
       { id: 1, size: 'M', chest: '42 inch', length: '27 inch', sleeves: '22 inch' },

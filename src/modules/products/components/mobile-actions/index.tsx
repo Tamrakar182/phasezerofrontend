@@ -25,10 +25,17 @@ const MobileActions: React.FC<MobileActionsProps> = ({
   const colors = product.stock.map((stock) => stock.color)
   const dispatch = useCartStore((state) => state.dispatch)
   const router = useRouter()
-
+  
+  
   const [size, setSize] = React.useState<string>(sizes[0])
   const [color, setColor] = React.useState<string>(colors[0])
+  
+  const selectedStock = product.stock.find(
+    (stock) => stock.size === size && stock.color === color
+  );
 
+  const isOutOfStock = selectedStock ? selectedStock.stockQuantity === 0 : false;
+  
   const updateOptions = (option: string, type: string) => {
     if (type === "size") {
       setSize(option)
@@ -87,7 +94,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 </div>
               </Button>
               <Button onClick={handleCheckout}>
-                {product.available_stock <= 0 ? "Out of stock" : "Checkout"}
+                {isOutOfStock ? "Out of stock" : "Checkout"}
               </Button>
             </div>
           </div>

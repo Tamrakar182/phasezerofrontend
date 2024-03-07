@@ -85,7 +85,7 @@ const ShippingInfoTab = () => {
           <div>
             <span className="font-semibold">Fast delivery</span>
             <p className="max-w-sm">
-              Phasezero will dispatch orders inside Kathmandu Valley within 24 hours. Outside the valley, it will take no more than 2-3 days, depending on location.
+              Phase Zero will dispatch orders inside Kathmandu Valley within 24 hours. Outside the valley, it will take no more than 2-3 days, depending on location.
             </p>
           </div>
         </div>
