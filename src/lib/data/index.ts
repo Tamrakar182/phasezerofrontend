@@ -176,7 +176,7 @@ export const postData = async (data: string) => {
   try {
       const response = await axios.get(`orders/confirm?data=${data}`);
       if (response.status === 200) {
-          return response.data.payload.data
+          return response.data.payload
       } else {
           throw Error
       }
