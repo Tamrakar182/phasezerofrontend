@@ -19,7 +19,7 @@ export default async function SuccessPage({
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
-      <h1 className="text-4xl text-white">Sucessful Payment!</h1>
+      <h1 className="text-4xl text-black">Sucessful Payment!</h1>
       <p className="text-md text-gray-400">
         Successfully Purchased 
       </p>
@@ -27,7 +27,7 @@ export default async function SuccessPage({
         Transaction Code:{dataExists.transactionCode}
       </p> */}
 
-      <Link href="/" className="mt-4 underline text-lg text-white">
+      <Link href="/" className="mt-4 underline text-lg text-black">
         Go to home
       </Link>
     </div>
