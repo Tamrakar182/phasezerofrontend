@@ -5,7 +5,7 @@ import { data } from "../../../data"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Phase Zero",
   description:
     "Shop all available models only at the Phase Zero. Secure Payment.",
 }

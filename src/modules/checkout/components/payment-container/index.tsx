@@ -11,7 +11,7 @@ const PaymentContainer = () => {
     >
       <button className={"flex flex-row items-center gap-x-4 py-4 px-8"}>
         <Radio checked={true} />
-        <p>Cash on Delievery</p>
+        <p>Cash on Delivery</p>
       </button>
     </div>
   )
