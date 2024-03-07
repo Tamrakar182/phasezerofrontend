@@ -12,17 +12,18 @@ import { useForm, FormProvider } from "react-hook-form"
 import { PaymentProvider } from "@lib/context/payment-context"
 import Image from "next/image"
 // modify payment functions here
-import { handleCODPayment, handleEsewaPayment } from "@lib/data"
+import { handleOrderPlacement } from "@lib/data"
+import Snackbar from "@modules/common/components/snackbar"
 
 const CheckoutTemplate = () => {
   const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
-  const [payment, setPayment] = useState<string>("cash_on_delivery")
+  const [payment, setPayment] = useState<string>("cash-on-delivery")
+  const dispatch = useCartStore((state) => state.dispatch)
 
   const cartState = useFromStore({
     store: useCartStore,
     storeCallback: (state) => state,
-
   })
 
   const delieveryCharge = 125
@@ -37,17 +38,45 @@ const CheckoutTemplate = () => {
   });
 
   // modify here
-  const handlePayment = (data: PZGuestCheckoutI) => {
+  const handlePayment = async (data: PZGuestCheckoutI) => {
     if (cartState) {
+      setSubmitting(true)
       const discountAmount = (cartState.totalAmount * cartState.discountPercent) / 100
-      console.log({
-        ...data,
-        price: cartState.totalAmount - discountAmount + delieveryCharge,
-        product: cartState.cart?.product.name,
-        size: cartState.cart?.size,
+
+      const res = await handleOrderPlacement({
+        totalAmount: cartState.totalAmount - discountAmount + delieveryCharge,
+        amount: cartState.totalAmount,
         color: cartState.cart?.color,
+        size: cartState.cart?.size,
         paymentMethod: payment,
-      })
+        productId: cartState.cart?.product.slug,
+        discountCode: cartState.discountCode,
+        discount: discountAmount,
+        name: data.name,
+        email: data.email,
+        phone: data.phoneNo,
+        address: data.address,
+        quantity: cartState.cart?.quantity,
+      }, payment).catch(() => {
+        setSubmitting(false)
+        Snackbar.error("Error placing order")
+      });
+
+      if (res?.status === 201) {
+        setSubmitting(false)
+        if (payment === "cash-on-delivery") {
+          Snackbar.success("Order placed successfully")
+          dispatch({ type: "RESET_CART" })
+          router.push("/")
+          return;
+        } else {
+          Snackbar.success("Redirecting to eSewa")
+          return;
+        }
+      }
+
+      setSubmitting(false)
+      Snackbar.error("Error placing order")
     }
   }
 
@@ -98,14 +127,12 @@ const CheckoutTemplate = () => {
                     </div>
                   </div>
                 </div>
-                {cartState && (
-                  <CheckoutSummary
-                    cartState={cartState}
-                    handlePayment={handlePayment}
-                    submitting={submitting}
-                    delieveryCharge={delieveryCharge}
-                  />
-                )}
+                {cartState && <CheckoutSummary
+                  cartState={cartState}
+                  handlePayment={handlePayment}
+                  submitting={submitting}
+                  delieveryCharge={delieveryCharge}
+                />}
               </>
             </div>
           </PaymentProvider>

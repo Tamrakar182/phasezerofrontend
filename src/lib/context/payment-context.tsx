@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-type PaymentMethod = "cash_on_delivery" | "esewa";
+type PaymentMethod = "cash-on-delivery" | "esewa";
 
 interface PaymentContext {
   paymentMethod: PaymentMethod;
@@ -15,7 +15,7 @@ interface PaymentProviderProps {
 
 export const PaymentProvider = ({ children }: PaymentProviderProps) => {
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>(
-    "cash_on_delivery"
+    "cash-on-delivery"
   );
 
   return (

@@ -21,7 +21,10 @@ const DiscountCode = ({ discount }: Props) => {
       if (res.data.success) {
         const coupon = res.data.discount;
         setCouponCode("");
-        dispatch({ type: "APPLY_DISCOUNT", payload: coupon });
+        dispatch({ type: "APPLY_DISCOUNT", payload: {
+          code: couponCode,
+          percent: coupon,
+        } });
         return;
       }
       setCouponError("Invalid coupon code");
@@ -31,7 +34,10 @@ const DiscountCode = ({ discount }: Props) => {
   }
 
   const onRemove = () => {
-    dispatch({ type: "APPLY_DISCOUNT", payload: 0 })
+    dispatch({ type: "APPLY_DISCOUNT", payload: {
+      code: "",
+      percent: 0,
+    } })
   }
 
   const handleCouponCodeChange = (event: ChangeEvent<HTMLInputElement>) => {

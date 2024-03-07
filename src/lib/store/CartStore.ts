@@ -10,6 +10,7 @@ const useCartStore = create<CartStoreState>()(
       cart: null,
       cartId: "",
       count: 0,
+      discountCode: "",
       discountPercent: 0,
       totalAmount: 0,
       dispatch: (action: CartStoreAction) =>

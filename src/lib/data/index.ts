@@ -139,28 +139,21 @@ export async function getStock(slug: string): Promise<PZStockResponseI> {
   }
 }
 
-export const handleCODPayment = async (data: any) => {
+export const handleOrderPlacement = async (data: any, paymentMethod: string) => {
   try {
-    const reponse = await axios.post("/create/order")
-
-  } catch (error) {
-    throw error
-  }
-}
-
-export const handleEsewaPayment = async (data: any) => {
-  try {
-    const response = await axios.post("/create/order", data);
-    if (response?.status === 200) {
-        esewaCall(response?.data?.payload?.data.formData);
+    const response = await axios.post("/orders", data);
+    if (paymentMethod === "esewa" && response?.status === 201) {
+      esewaCall(response?.data);
+      return response
     }
+    return response
   } catch (error) {
     throw error
   }
 };
 
 export const esewaCall = (formData: any) => {
-  const path = process.env.ESEWA_URL as string;
+  const path = "https://rc-epay.esewa.com.np/api/epay/main/v2/form";
   var form = document.createElement("form");
   form.setAttribute("method", "POST");
   form.setAttribute("action", path);
@@ -174,5 +167,19 @@ export const esewaCall = (formData: any) => {
   }
 
   document.body.appendChild(form);
+  console.log(form);
   form.submit();
 };
+
+export const postData = async (data: string) => {
+  try {
+      const response = await axios.get(`orders/confirm?data=${data}`);
+      if (response.status === 200) {
+          return response.data.payload.data
+      } else {
+          throw Error
+      }
+  } catch (error) {
+      throw error;
+  }
+}

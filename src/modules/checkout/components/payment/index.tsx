@@ -20,9 +20,9 @@ const Payment = ({ paymentMethod, handlePaymentMethodChange }: Props) => {
       >
         <button
           className={"flex flex-row items-center gap-x-4 px-8"}
-          onClick={() => handlePaymentMethodChange("cash_on_delivery")}
+          onClick={() => handlePaymentMethodChange("cash-on-delivery")}
         >
-          <Radio checked={paymentMethod === "cash_on_delivery"} />
+          <Radio checked={paymentMethod === "cash-on-delivery"} />
           <Image src="/cod.png" height={40} width={40} alt="cash on delievery" />
           <p>Cash On Delivery</p>
         </button>

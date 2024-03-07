@@ -4,6 +4,7 @@ import { PZCartProductI } from "@/types/product"
 export type CartStoreState = {
   cart: PZCartProductI | null
   count: number
+  discountCode: string
   discountPercent: number
   totalAmount: number
   // eslint-disable-next-line no-unused-vars
@@ -13,4 +14,13 @@ export type CartStoreState = {
 // actions for cart store
 export type CartStoreAction =
   | { type: "ADD_ITEM"; payload: PZCartProductI }
-  | { type: "APPLY_DISCOUNT"; payload: number }
+  | {
+      type: "APPLY_DISCOUNT"
+      payload: {
+        code: string
+        percent: number
+      }
+    }
+  | {
+    type: "RESET_CART"
+  }
