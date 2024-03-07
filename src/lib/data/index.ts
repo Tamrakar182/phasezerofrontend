@@ -153,7 +153,7 @@ export const handleOrderPlacement = async (data: any, paymentMethod: string) => 
 };
 
 export const esewaCall = (formData: any) => {
-  const path = "https://rc-epay.esewa.com.np/api/epay/main/v2/form";
+  const path = "https://epay.esewa.com.np/api/epay/main/v2/form";
   var form = document.createElement("form");
   form.setAttribute("method", "POST");
   form.setAttribute("action", path);
