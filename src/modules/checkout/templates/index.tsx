@@ -113,7 +113,7 @@ const CheckoutTemplate = () => {
                           <div className="bg-gray-900 w-8 h-8 rounded-full text-white flex justify-center items-center text-sm">
                             1
                           </div>
-                          <h2>Delievery address</h2>
+                          <h2>Delivery address</h2>
                         </div>
                         <div className="px-8 pb-8">
                           <ShippingAddress />
