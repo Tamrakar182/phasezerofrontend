@@ -16,6 +16,7 @@ const ShippingAddress = () => {
         <div className="grid grid-cols-1 gap-y-2">
           <Input
             label="Email"
+            id="email"
             {...register("email", {
               required: "Email is required",
               pattern: emailRegex,
@@ -27,6 +28,7 @@ const ShippingAddress = () => {
           <div className="grid grid-cols-2 gap-x-2">
             <Input
               label="Name"
+              id="name"
               {...register("name", {
                 required: "Name is required",
               })}
@@ -36,6 +38,7 @@ const ShippingAddress = () => {
             />
             <Input
               label="Phone No"
+              id="phoneNo"
               {...register("phoneNo", {
                 required: "Phone Number is required",
                 minLength: {
@@ -54,6 +57,7 @@ const ShippingAddress = () => {
           </div>
           <Input
             label="Address"
+            id="address"
             {...register("address", {
               required: "Address is required",
             })}

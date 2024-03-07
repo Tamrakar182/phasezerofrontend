@@ -63,6 +63,7 @@ const DiscountCode = ({ discount }: Props) => {
             <div className="grid grid-cols-[1fr_80px] gap-x-2">
               <input
                 placeholder="Code"
+                id="couponCode"
                 value={couponCode}
                 name="couponCode"
                 onChange={handleCouponCodeChange}

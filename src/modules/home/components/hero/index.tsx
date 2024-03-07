@@ -1,22 +1,22 @@
-"use client"
+// "use client"
 import Image from "next/image"
 import Timer from "../timer"
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const targetedDate = "March 13, 2024 00:00:00";
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
+  // useEffect(() => {
+  //   const checkMobile = () => {
+  //     setIsMobile(window.innerWidth <= 1024);
+  //   };
 
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+  //   checkMobile();
+  //   window.addEventListener('resize', checkMobile);
 
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  //   return () => window.removeEventListener('resize', checkMobile);
+  // }, []);
 
 
   return (
@@ -37,24 +37,24 @@ const Hero = () => {
       </div>
 
       <div className="image-container">
-        {/* <picture> */}
-        {/* <source media="(max-width: 1024px)" srcSet="/hero_mob.jpg" /> */}
-        <Image
-          // src={"/hero.jpg"}
-          src={isMobile ? '/hero_mob.jpg' : '/hero.jpg'}
-          loading="eager"
-          priority={true}
-          quality={90}
-          alt="display pic for retro"
-          className="absolute inset-0"
-          draggable="false"
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: "cover",
-          }}
-        />
-        {/* </picture> */}
+        <picture>
+          <source media="(max-width: 1024px)" srcSet="/hero_mob.jpg" />
+          <Image
+            src={"/hero.jpg"}
+            // src={isMobile ? '/hero_mob.jpg' : '/hero.jpg'}
+            loading="eager"
+            priority={true}
+            quality={90}
+            alt="display pic for retro"
+            className="absolute inset-0"
+            draggable="false"
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </picture>
       </div>
       <div className="absolute inset-0 bg-black opacity-50"></div>
     </div>

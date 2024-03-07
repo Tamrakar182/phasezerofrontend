@@ -3,6 +3,7 @@ import clsx from "clsx"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const Nav = () => {
   const pathname = usePathname()
@@ -56,10 +57,12 @@ const Nav = () => {
         >
           <div className="flex items-center h-full">
             <Link href="/" className="max-w-[500px]">
-              <img
+              <Image
                 src="/logo_black.png"
                 alt="logo"
-                className="object-contain h-20 w-50 p-4"
+                height={80}
+                width={120}
+                className="object-contain p-2"
               />
             </Link>
           </div>

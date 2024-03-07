@@ -10,6 +10,7 @@ import Payment from "@modules/checkout/components/payment"
 import ShippingAddress from "../components/shipping-address"
 import { useForm, FormProvider } from "react-hook-form"
 import { PaymentProvider } from "@lib/context/payment-context"
+import Image from "next/image"
 // modify payment functions here
 import { handleCODPayment, handleEsewaPayment } from "@lib/data"
 
@@ -38,9 +39,10 @@ const CheckoutTemplate = () => {
   // modify here
   const handlePayment = (data: PZGuestCheckoutI) => {
     if (cartState) {
+      const discountAmount = (cartState.totalAmount * cartState.discountPercent) / 100
       console.log({
         ...data,
-        price: cartState.totalAmount - (cartState.totalAmount * cartState.discountPercent) / 100 + delieveryCharge,
+        price: cartState.totalAmount - discountAmount + delieveryCharge,
         product: cartState.cart?.product.name,
         size: cartState.cart?.size,
         color: cartState.cart?.color,
@@ -58,10 +60,12 @@ const CheckoutTemplate = () => {
       <div className="h-16 bg-white">
         <nav className="flex items-center h-full justify-center content-container">
           <Link href="/" className="max-w-[500px]">
-            <img
+            <Image
               src="/logo_black.png"
               alt="logo"
-              className="object-contain h-20 w-50 p-4"
+              height={80}
+              width={120}
+              className="object-contain p-2"
             />
           </Link>
         </nav>

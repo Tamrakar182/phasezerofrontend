@@ -2,6 +2,7 @@ import React from "react";
 import StepContainer from "../step-container";
 import Radio from "@modules/common/components/radio";
 import clsx from "clsx";
+import Image from "next/image";
 
 interface Props {
   paymentMethod: string;
@@ -22,7 +23,7 @@ const Payment = ({ paymentMethod, handlePaymentMethodChange }: Props) => {
           onClick={() => handlePaymentMethodChange("cash_on_delivery")}
         >
           <Radio checked={paymentMethod === "cash_on_delivery"} />
-          <img src="/cod.png" height={40} width={40} alt="cash on delievery" />
+          <Image src="/cod.png" height={40} width={40} alt="cash on delievery" />
           <p>Cash On Delivery</p>
         </button>
         <button
@@ -30,7 +31,7 @@ const Payment = ({ paymentMethod, handlePaymentMethodChange }: Props) => {
           onClick={() => handlePaymentMethodChange("esewa")}
         >
           <Radio checked={paymentMethod === "esewa"} />
-          <img src="/esewa.png" height={40} width={40} alt="esewa" />
+          <Image src="/esewa.png" height={40} width={40} alt="esewa" />
           <p>Esewa</p>
         </button>
       </div>

@@ -1,12 +1,13 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 
 const footerNavigation = {
   connect: [
     { name: "Contact Us", href: "tel:+9779808304413" },
     { name: "Facebook", href: "https://www.facebook.com/phasezero.clo/" },
     { name: "Instagram", href: "https://www.instagram.com/phasezero.clo/" },
-    { name: "Tiktok", href: "https://www.tiktok.com/@phasezero.clo" },
+    // { name: "Tiktok", href: "https://www.tiktok.com/@phasezero.clo" },
   ],
 }
 
@@ -16,7 +17,7 @@ const FooterNav = () => {
       <div className="flex flex-col gap-y-6 xsmall:flex-row justify-between xsmall:items-start">
         <div className="flex justify-center items-center">
           <Link href="/" className="max-w-[250px]">
-            <img src="/logo.png" alt="logo" height={112} width={160} />
+            <Image src="/logo.png" alt="logo" height={112} width={160} />
           </Link>
         </div>
         <div className="text-small-regular gap-x-10 md:gap-x-16 text-right xsmall:items-start items-end">
