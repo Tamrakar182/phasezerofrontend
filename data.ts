@@ -22,7 +22,11 @@ export const data: PZProductWithoutStockI[] = [
       "/product-images/hoodie_black2.jpg",
       "/product-images/hoodie_blue4.jpg",
     ],
-    size_chart: "/hoodie.png",
+    size_chart: [
+      { id: 1, size: 'M', chest: '44 inch', length: '27 inch', sleeves: '30 inch' },
+      { id: 2, size: 'L', chest: '46 inch', length: '28 inch', sleeves: '31 inch' },
+      { id: 3, size: 'XL', chest: '48 inch', length: '29 inch', sleeves: '32 inch' },
+    ],
     price: 2500,
     available_stock: 136,
     collectionId: 5,
@@ -45,11 +49,15 @@ export const data: PZProductWithoutStockI[] = [
         "Half Botton for easy temperature regulation",
         "Suitable for sports or everyday wear", 
     ],
-    size_chart: "/polo.png",
+    size_chart: [
+      { id: 1, size: 'M', chest: '42 inch', length: '25 inch', sleeves: '22 inch' },
+      { id: 2, size: 'L', chest: '44 inch', length: '26.5 inch', sleeves: '23 inch' },
+      { id: 3, size: 'XL', chest: '46 inch', length: '28.5 inch', sleeves: '24 inch' },
+    ],
     image: [
+      "/product-images/black2.jpg",
         "/product-images/white.jpg",
       "/product-images/black1.jpg",
-      "/product-images/black2.jpg",
       "/product-images/white2.jpg",
       "/product-images/black3.jpg",
     ],
@@ -77,7 +85,11 @@ export const data: PZProductWithoutStockI[] = [
       "Half zip chain for easy temperature regulation",
       "Perfect for Indoor/Outdoor",
     ],
-    size_chart: "/windbreaker.png",
+    size_chart: [
+      { id: 1, size: 'M', chest: '42 inch', length: '27 inch', sleeves: '22 inch' },
+      { id: 2, size: 'L', chest: '44 inch', length: '28 inch', sleeves: '23 inch' },
+      { id: 3, size: 'XL', chest: '46 inch', length: '29 inch', sleeves: '24 inch' },
+    ],
     image: [
       "/product-images/blue.jpg",
       "/product-images/blue2.jpg",

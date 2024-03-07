@@ -5,6 +5,7 @@ import React from "react"
 import { PZProductI } from "@/types/product"
 import useCartStore from "@lib/store/CartStore"
 import { useRouter } from "next/navigation"
+import SizeChart from "../size-chart"
 
 type ProductActionsProps = {
   product: PZProductI
@@ -72,6 +73,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
       )}
 
       {/* <img src={product.size_chart} alt="size chart" className="w-full" /> */}
+      <SizeChart data={product.size_chart} />
 
       {colors.length > 1 && (
         <div className="my-8 flex flex-col gap-y-6">

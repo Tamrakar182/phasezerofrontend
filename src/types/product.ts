@@ -3,7 +3,7 @@ export interface PZProductI {
   slug: string
   name: string
   description: string
-  size_chart: string
+  size_chart: SizeData[]
   info: string[]
   image: string[]
   price: number
@@ -12,6 +12,15 @@ export interface PZProductI {
   stock: PZProuctStockI[]
   categories: PZCategoryI[]
 }
+
+export type SizeData = {
+  id: number;
+  size: string;
+  chest: string;
+  length: string;
+  sleeves: string;
+  [key: string]: number | string;
+};
 
 export interface PZCartProductI {
   id?: string;
