@@ -68,6 +68,7 @@ const DiscountCode = ({ discount }: Props) => {
           <>
             <div className="grid grid-cols-[1fr_80px] gap-x-2">
               <input
+                className="min-w-[100px]"
                 placeholder="Code"
                 id="couponCode"
                 value={couponCode}
