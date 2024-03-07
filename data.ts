@@ -7,16 +7,16 @@ export const data: PZProductWithoutStockI[] = [
     slug: "61c82d33-9ce0-495b-8a18-c4ce5d340272",
     name: "Everday Hoodie",
     description:
-      "A must-have addition to your Spring/Summer wardrobe. Crafted from soft, lightweight fabric, this hoodie is perfect for those cool mornings and breezy evenings. With a classic design and versatile style, it pairs effortlessly with jeans, shorts, or joggers for a laid-back yet stylish look.",
+      "A must-have addition to your Spring/Summer wardrobe. Crafted from soft, lightweight fabric, this hoodie is perfect for those cool mornings & breezy evenings. With a classic design & versatile style, it pairs effortlessly with jeans, shorts, or joggers for a laid-back yet stylish look.",
     modelSize: [
-      "The model is 5’11”ft 74kgs and wears size L",
-      "The model is 5’6”ft 54kgs and wears size M"
+      "The model is 5’11”ft 74kgs & wears size L",
+      "The model is 5’6”ft 54kgs & wears size M"
     ],
     info: [
       "Lycra fabric",
       "Relaxed fit",
       "Versatile style",
-      "Ribbed cuffs and hem",
+      "Ribbed cuffs & hem",
       "Perfect for wearing as loungewear or layering",
     ],
     image: [
@@ -46,16 +46,16 @@ export const data: PZProductWithoutStockI[] = [
     slug: "0ee0a46a-3761-48dd-88c0-7a0e9bee7613",
     name: "Club 2024 Polo",
     description:
-      "A versatile essential for your Spring/Summer wardrobe. Crafted from lightweight, breathable fabric, this classic piece offers both style and comfort. With its timeless design and long sleeves for added sun protection, it's perfect for transitioning between seasons and staying cool on warmer days. Elevate your casual look effortlessly with this must-have staple.",
+      "A versatile essential for your Spring/Summer wardrobe. Crafted from lightweight, breathable fabric, this classic piece offers both style & comfort. With its timeless design & long sleeves for added sun protection, it's perfect for transitioning between seasons & staying cool on warmer days. Elevate your casual look effortlessly with this must-have staple.",
     info: [
-        "Light, warm and comfortable Polyester cotton fabric",
+        "Light, warm & comfortable Polyester cotton fabric",
         "Logo embroidered on chest",
         "Half Botton for easy temperature regulation",
         "Suitable for sports or everyday wear", 
     ],
     modelSize: [
-      "The model is 5’11”ft 74kgs and wears size L",
-      "The model is 5’6”ft 54kgs and wears size M",
+      "The model is 5’11”ft 74kgs & wears size L",
+      "The model is 5’6”ft 54kgs & wears size M",
     ],
     size_chart: [
       { id: 1, size: 'M', chest: '42 inch', length: '25 inch', sleeves: '22 inch' },
@@ -84,7 +84,7 @@ export const data: PZProductWithoutStockI[] = [
     slug: "051d5d0c-e22f-47c7-b0e3-7df658789226",
     name: "Retro Wind Breaker",
     description:
-      "A stylish addition to your Spring/Summer wardrobe. Inspired by vintage designs, this windbreaker combines nostalgia with modern functionality. Crafted from lightweight, water-resistant fabric, it's perfect for those unpredictable weather days. With its vibrant colors and retro details, it adds a pop of personality to any outfit. Whether you're hitting the streets or exploring the great outdoors, stay cool and protected in our Retro Windbreaker. Upgrade your spring style with this timeless piece today!",
+      "A stylish addition to your Spring/Summer wardrobe. Inspired by vintage designs, this windbreaker combines nostalgia with modern functionality. Crafted from lightweight, water-resistant fabric, it's perfect for those unpredictable weather days. With its vibrant colors & retro details, it adds a pop of personality to any outfit. Whether you're hitting the streets or exploring the great outdoors, stay cool & protected in our Retro Windbreaker. Upgrade your spring style with this timeless piece today!",
     info: [
       "Rubberised fabric",
       "Light weight",
@@ -94,8 +94,8 @@ export const data: PZProductWithoutStockI[] = [
       "Perfect for Indoor/Outdoor",
     ],
     modelSize: [
-      "The model is 5’11”ft 74kgs and wears size L",
-      "The model is 5’2”ft 50kgs and wears size M",
+      "The model is 5’11”ft 74kgs & wears size L",
+      "The model is 5’2”ft 50kgs & wears size M",
     ],
     size_chart: [
       { id: 1, size: 'M', chest: '42 inch', length: '27 inch', sleeves: '22 inch' },

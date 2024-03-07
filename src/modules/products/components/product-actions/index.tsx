@@ -19,6 +19,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
 
   const [size, setSize] = React.useState<string>(sizes[0])
   const [color, setColor] = React.useState<string>(colors[0])
+  const [showSizeChart, setShowSizeChart] = React.useState<boolean>(false)
 
   const selectedStock = product.stock.find(
     (stock) => stock.size === size && stock.color === color
@@ -51,6 +52,10 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
     router.push("/checkout")
   }
 
+  const handleSizeChart = () => {
+    setShowSizeChart(!showSizeChart)
+  }
+
   return (
     <div className="flex flex-col gap-y-2">
       <h3 className="text-xl-regular">{product.name}</h3>
@@ -73,10 +78,13 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
               title="Size"
             />
           </div>
+          <Button onClick={handleSizeChart}>
+            {showSizeChart ? "Hide" : "Show"} Size Chart
+          </Button>
         </div>
       )}
 
-      <SizeChart data={product.size_chart} />
+      {showSizeChart && <SizeChart data={product.size_chart} />}
 
       {colors.length > 1 && (
         <div className="my-8 flex flex-col gap-y-6">
