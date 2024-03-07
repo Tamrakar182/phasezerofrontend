@@ -141,6 +141,7 @@ export async function getStock(slug: string): Promise<PZStockResponseI> {
 
 export const handleOrderPlacement = async (data: any, paymentMethod: string) => {
   try {
+    console.log(data)
     const response = await axios.post("/orders", data);
     if (paymentMethod === "esewa" && response?.status === 201) {
       esewaCall(response?.data);

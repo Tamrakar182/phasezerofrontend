@@ -45,6 +45,7 @@ const CheckoutTemplate = () => {
 
       const res = await handleOrderPlacement({
         totalAmount: cartState.totalAmount - discountAmount + delieveryCharge,
+        deliveryCharge: delieveryCharge,
         amount: cartState.totalAmount,
         color: cartState.cart?.color,
         size: cartState.cart?.size,
