@@ -4,7 +4,7 @@ import Timer from "../timer"
 // import { useState, useEffect } from 'react';
 
 const Hero = () => {
-  const targetedDate = "March 13, 2024 00:00:00";
+  const targetedDate = "March 14, 2024 23:59:59";
   // const [isMobile, setIsMobile] = useState(false);
 
   // useEffect(() => {
